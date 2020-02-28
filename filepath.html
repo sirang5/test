@@ -1,0 +1,92 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>SendBee filepath</title>
+<style type="text/css">
+	body {background:#FFF; margin:0; padding:10px;}
+	#wrap {max-width:600px; margin:0 auto;}
+	table {width:100%; table-layout:fixed; border:1px solid #D8D8D8; border-collapse:collapse;}
+	caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; line-height:0;}
+	th {background:#EFEFEF;border-bottom:1px solid #D8D8D8;border-right:1px solid #D8D8D8; font-size:14px; color:#333; padding:5px 0 4px 0;}
+	td {border-bottom:1px solid #D8D8D8;border-right:1px solid #D8D8D8; font-size:14px; text-align:left; padding:10px 5px 7px 5px; color:#333;}
+	td span {color:red;}
+	h1 {width:100%;line-height:150%; margin:0; padding:10px 0; text-align:center; font-size:16px;}
+	th, h1 {font-family:Dotum, "돋움";}
+	td {font-family:Arial;}
+	a:link,
+	a:visited,
+	a:active {color:#666; text-decoration:none;}
+	a {display:block;}
+	tr.tr_over {background-color:#EEE;}
+	tr.tr_out {background-color:#FFF;}
+	td.linetitle {background:#CDE2E7;padding:5px;margin:0;}
+</style>
+<script type="text/javascript">
+	var no = 0;
+	var u = 0;
+	
+	function viewtitle(title) {
+		document.write("<tr><td colspan='3' class='linetitle' id='"+title+"'><strong>"+title+"</strong></td></tr>");
+	}
+	
+	function viewlist(title, url, check) {
+		no = no + 1;
+		document.write("<tr onMouseOver=this.className='tr_over' onMouseOut=this.className='tr_out'><td style='text-align:center;'>");
+		document.write(no);
+		document.write("</td><td><a href='"+url+"' target='_blank'>"+title+"</a></td><td style='display:none'><nobr>"+url+"</nobr></td><td style='text-align:center;'>"+check+"</td></tr>");
+	}
+</script>
+</head>
+<body>
+
+<div id="wrap">
+	<h1>SendBee</h1>
+	<table border="1" cellspacing="0">
+	<caption>HTML 작업 목록</caption>
+	<colgroup>
+		<col width="8%"><col><col width="10%">
+	</colgroup>
+	<thead>
+	<tr>
+		<th>no</th>
+		<th>title</th>
+		<th>완료</th>
+	</tr>
+	</thead>
+	<tbody>
+	<script type="text/javascript">
+
+	viewlist('메인', 'Index.html', 'O');
+	viewlist('상품> 목록(=검색결과)', 'Product_list.html', 'O');
+	viewlist('상품> 상세 <span class=fc_red>+ layer 견적서, 출력, 장바구니담기</span>', 'Product_detail.html', 'O');
+	viewlist('장바구니', '.html', '');
+	viewlist('주문> 결제 <span class=fc_red>+ layer 미입력, 미리보기, 발신번호변경, 수신확인</span>', '.html', '');
+	viewlist('주문> 결제> 완료', '.html', '');
+	viewlist('[layer] 회원가입> 가입', '.html', '');
+	viewlist('[layer] 회원가입> 완료', '.html', '');
+	viewlist('고객센터> 이벤트> 목록', '.html', '');
+	viewlist('고객센터> 이벤트> 상세', '.html', '');
+	viewlist('고객센터> 공지사항', '.html', '');
+	viewlist('고객센터> faq', '.html', '');
+	viewlist('마이페이지> 회원정보변경', '.html', '');
+	viewlist('[layer] 마이페이지> 탈퇴', '.html', '');
+	viewlist('마이페이지> 주문내역', '.html', '');
+	viewlist('마이페이지> 주문내역> 주문상품정보 <span class=fc_red>+ layer 전자거래명세서</span>', '.html', '');
+	viewlist('마이페이지> 캐시 <span class=fc_red>+ layer 충전하기, 충전완료</span>', '.html', '');
+	viewlist('마이페이지> 캐시> 포인트', '.html', '');
+	viewlist('개인정보취급방침', '.html', '');
+	viewlist('이용약관', '.html', '');
+	viewlist('마케팅정보 수신동의', '.html', '');
+	viewlist('블로그> 목록', '.html', '');
+	viewlist('블로그> 상세', '.html', '');
+
+	</script>
+	</tbody>
+	</table>
+</div>
+
+</body>
+</html>

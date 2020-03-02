@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../common.css">
+</head>
+<body>
+
+	<style>
+		.btn_file {display:inline-block; width:73px; height:21px; background:url(http://image.jinhak.com/job/site/btn_file02.gif) no-repeat left top; vertical-align:middle; margin-right:5px;}
+		.btn_file span {display:none;}	
+	</style>
+	<p>[btn_file]</p>
+	<div>
+		<label for="file" class="btn_file"><span>파일등록</span></label>
+		<input type="file" name="file" value="" id="file" class="hide">
+	</div>
+
+	<br><br>
+
+	<style type="text/css">
+		.btn_file2 {position:relative; display:inline-block; overflow:hidden; vertical-align:middle;}
+		.btn_file2 input {cursor:pointer;}
+		.file_input_hidden {position:absolute; top:50%; margin-top:-10px; right:0; opacity:0; filter:alpha(opacity=0); -ms-filter:"alpha(opacity=0)"; -khtml-opacity:0; -moz-opacity:0;}
+	</style>
+	<p>[btn_file2]</p>
+	<input type="text" id="fileName" class="fl input5" readonly="readonly" style="width:420px">
+	<span class="btn_file2">
+		<input type="button" class="sbtn1" value="찾기" />
+		<input type="file" class="file_input_hidden" onchange="javascript: document.getElementById('fileName').value = this.value">
+	</span>
+
+</body>
+</html>	

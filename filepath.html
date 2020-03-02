@@ -4,39 +4,47 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <title>Publishing tip</title>
 <style type="text/css">
 	@import url("https://fonts.googleapis.com/earlyaccess/notosanskr.css");
-	body {background:#FFF; margin:0; padding:10px; color:#333; font-family:'Noto Sans KR',sans-serif; line-height:1;}
+	body {background:#FFF; margin:0; padding:10px; color:#333; font-family:'Noto Sans KR',sans-serif; line-height:1.4;}
+	h1, h2, p {margin:0; padding:0;}
 	a {text-decoration:none; color:inherit;}
 	#wrap {max-width:768px; margin:0 auto;}
-	h1 {font-size:24px; text-align:center;}
-	table {width:100%; table-layout:fixed; border:1px solid #D8D8D8; border-collapse:collapse;}
-	caption {visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; line-height:0;}
-	th, td {border:solid 1px #D8D8D8; padding:5px;}
-	th {font-size:11px; background:#EFEFEF;}
-	td {font-size:12px;}
-	td span {color:red;}
-	td a {display:block;}
-	tr.tr_over {background-color:#EEE;}
-	tr.tr_out {background-color:#FFF;}
-	td.linetitle {background:linear-gradient(to right, #da1b60, #ff8a00); padding:10px 5px; color:yellow;}
+	h1 {font-size:24px; text-align:center; margin-top:20px;}
+	h2 {font-size:12px; color:yellow; font-weight:normal; margin-top:30px; padding:5px; background:linear-gradient(to right, #da1b60, #ff8a00);}
+	.tip_list .list {font-size:12px; zoom:1; border-bottom:dashed 1px #D8D8D8; padding:7px 0;}
+	.tip_list .list:after {content:""; display:table; clear:both; table-layout:fixed;}
+	.tip_list .list span {display:inline-block; width:40px; text-align:center;}
+	.tip_list .list button {border:0; padding:0; margin:0; background:transparent; cursor:pointer;}
+	.tip_list .iframe_wrap {position:relative;}
+	.tip_list .iframe_wrap iframe {position:absolute; top:-9999em; left:-9999em;}
+	.tip_list .iframe_wrap iframe.show {position:relative; top:auto; left:0; border-bottom:solid 2px #D8D8D8;}
 </style>
 <script type="text/javascript">
-	var no = 0;
+	var no = 0; // list 노출
 	var u = 0;
-	
-	function viewtitle(title) {
-		document.write("<tr><td colspan='3' class='linetitle' id='"+title+"'>"+title+"</strong></td></tr>");
-	}
-	
-	function viewlist(title, url) {
+	function list(title, url) {
 		no = no + 1;
-		document.write("<tr onMouseOver=this.className='tr_over' onMouseOut=this.className='tr_out'>");
-		document.write("<td style='text-align:center;'>"+no+"</td>");
-		document.write("<td><a href='"+url+"' target='_blank'>"+title+"</a></td>");
-		document.write("<td><nobr><a href='"+url+"' target='_blank'>"+url+"</a></nobr></td>");
-		document.write("</tr>");
+		document.write("<div class=tip_list>");
+		document.write("<p class=list><span>"+no+"</span><button>"+title+"</button></p>");
+		document.write("<div class=iframe_wrap><iframe id='iframeList' allowtransparency='true' onload='resizeFrame(this)' src="+url+" width='100%' height='100%' frameborder='0' scrolling='no'></iframe></div>");
+		document.write("</div>");
+	}
+
+	$(function(){ // list toggle
+		$(".tip_list button").click(function(){
+			$(this).parent().next().find("iframe").toggleClass("show");
+		});
+	});
+
+	function resizeFrame(iframeObj) { // iframe resize
+		var innerBody = iframeObj.contentWindow.document.documentElement;
+		oldEvent = innerBody.onclick;
+		innerBody.onclick = function () { resizeFrame(iframeObj, 1); oldEvent; };
+		var innerHeight = innerBody.scrollHeight;
+		iframeObj.style.height = innerHeight + "px";
 	}
 </script>
 </head>
@@ -44,27 +52,20 @@
 
 <div id="wrap">
 	<h1>Work tip</h1>
-	<table border="1" cellspacing="0">
-	<caption>tip 목록</caption>
-	<colgroup>
-		<col width="8%"><col><col width="30%">
-	</colgroup>
-	<thead>
-	<tr>
-		<th>no</th>
-		<th>subj</th>
-		<th>url</th>
-	</tr>
-	</thead>
-	<tbody>
-	<script type="text/javascript">
 
-	viewtitle("HTML");
-	viewlist('메인aaa', 'Index.html');
-
+	<h2>HTML</h2>
+	<script>
+		list('a / input submit / button 구분','html/a_input_button.html');
+		list('input, textarea 텍스트 미리넣기','html/placeholder.html');
+		list('excel 파일 데이터를 HTML 로 변환','html/excel.html');
+		list('파일첨부를 이미지로','html/btn_file.html');
+		list('iframe 속성','html/iframe_properties.html');
+		list('동영상 대표 이미지사용','html/vod.html');
+		list('textarea 대용','html/textarea.html');
+		list('graph sample','html/graph.html');
+		list('반응형','html/media_query.html');
 	</script>
-	</tbody>
-	</table>
+
 </div>
 
 </body>

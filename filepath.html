@@ -35,7 +35,8 @@
 
 	$(function(){ // list toggle
 		$(".tip_list button").click(function(){
-			$(this).parent().next().find("iframe").toggleClass("show");
+			$("#wrap iframe").removeClass("show");
+			$(this).parent().next().find("iframe").addClass("show");
 		});
 	});
 
@@ -68,7 +69,12 @@
 
 	<h2>CSS</h2>
 	<script>
-		list('css','css/.html');
+		list('webfont','css/webfont.html');
+		list('반응형','css/mediaquery.html');
+		list('이미지, 텍스트 세로 중앙정렬','css/align_middle.html');
+		list('scrollbar','css/scrollbar.html');
+		list('말줄임','css/ellipsis.html');
+		list('form degisn','css/form.html');
 	</script>
 
 	<h2>Sass</h2>

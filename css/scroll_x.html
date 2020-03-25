@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../common.css">
+</head>
+<body>
+
+<xmp>
+<!-- type 1 -->
+.scr {position:relative; padding-left:60px;}
+.scr .left {position:absolute; left:0; top:0; bottom:0; width:60px; padding-top:10px; text-align:center; background:black; opacity:0.2; filter:alpha(opacity=20);}
+.scr .left span {color:#FFF; font-size:20px;}
+.scr .right {overflow-x:auto; overflow-y:hidden; width:100%;}
+.scr .right:after {content:""; clear:both; display:block;}
+.scr .right ul {display:table; width:100%; border:0; border-collapse:collapse;}
+.scr .right li {display:table-cell; padding:30px 0; min-width:80px; font-size:20px; border:solid 1px #000; text-align:center;}
+</xmp>
+
+<style type="text/css">
+	.scr {position:relative; width:500px; padding-left:60px; box-sizing:border-box;}
+	.scr .left {position:absolute; left:0; top:0; bottom:0; width:60px; padding-top:10px; text-align:center; background:black; opacity:0.2; filter:alpha(opacity=20);}
+	.scr .left span {color:#FFF; font-size:20px;}
+	.scr .right {overflow-x:auto; overflow-y:hidden; width:100%;}
+	.scr .right:after {content:""; clear:both; display:block;}
+	.scr .right ul {display:table; width:100%; border:0; border-collapse:collapse;}
+	.scr .right li {display:table-cell; padding:30px 0; min-width:80px; font-size:20px; border:solid 1px #000; text-align:center;}
+</style>
+
+<div class="scr">
+	<div class="left"><span>left</span></div>
+	<div class="right">
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+			<li>6</li>
+			<li>7</li>
+			<li>8</li>
+			<li>9</li>
+			<li>10</li>
+		</ul>
+	</div>
+</div>
+
+
+
+
+<hr>
+
+
+
+<xmp>
+<!-- type 2 -->
+.test_out {padding-left:102px; overflow-x:scroll; overflow-y:hidden; width:500px; box-sizing:border-box;}
+.test_out .fix1 {position:absolute; left:20px; width:100px; background-color: #FFF;}
+.test_out table {width:auto; table-layout:fixed; border-collapse:collapse;}
+.test_out table th, .test_out table td {border:solid 1px silver;}
+.test_out thead th {height:35px;}
+.test_out thead th.fix1 p {display:table-cell; width:100px; height:35px; vertical-align:middle; text-align:center;}
+.test_out td {min-width:70px;}
+@supports (-webkit-text-size-adjust:none) and (not (-ms-accelerator:true)) and (not (-moz-appearance:none)){ /* Safari 9.0+ (iOS Only) */
+	.test_out .fix1 {margin-top:-1px;}
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast:none) { /* IE Only */
+	.test_out .fix1 {margin-top:-1px;}
+}
+</xmp>
+<style type="text/css" media="screen">
+	.test_out {padding-left:102px; overflow-x:scroll; overflow-y:hidden; width:500px; box-sizing:border-box;}
+	/* .test_out::-webkit-scrollbar {display:none;} */
+	.test_out .fix1 {position:absolute; left:20px; width:100px; background-color: #FFF;}
+	.test_out table {width:auto; table-layout:fixed; border-collapse:collapse;}
+	.test_out table th, .test_out table td {border:solid 1px silver;}
+	.test_out thead th {height:35px;}
+	.test_out thead th.fix1 p {display:table-cell; width:100px; height:35px; vertical-align:middle; text-align:center;}
+	.test_out td {min-width:70px;}
+	@supports (-webkit-text-size-adjust:none) and (not (-ms-accelerator:true)) and (not (-moz-appearance:none)){ /* Safari 9.0+ (iOS Only) */
+		.test_out .fix1 {margin-top:-1px;}
+	}
+	@media screen and (-ms-high-contrast: active), (-ms-high-contrast:none) { /* IE Only */
+		.test_out .fix1 {margin-top:-1px;}
+	}
+</style>
+
+<div class="test_out">
+	<table border="1" cellspacing="0">
+	<thead>
+	<tr>
+		<th class="fix1" scope="col"><p>서울대</p></th>
+		<th scope="col">1고려대</th>
+		<th scope="col">2고려대</th>
+		<th scope="col">3고려대</th>
+		<th scope="col">4고려대</th>
+		<th scope="col">5고려대</th>
+		<th scope="col">6고려대</th>
+		<th scope="col">7고려대</th>
+		<th scope="col">8고려대</th>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<th class="fix1" scope="row">1</th>
+		<td>3</td>
+		<td>4</td>
+		<td>5</td>
+		<td>6</td>
+		<td>7</td>
+		<td>8</td>
+		<td>9</td>
+		<td>9</td>
+	</tr>
+	<tr>
+		<th class="fix1" scope="row">1</th>
+		<td>3</td>
+		<td>4</td>
+		<td>5</td>
+		<td>6</td>
+		<td>7</td>
+		<td>8</td>
+		<td>9</td>
+		<td>9</td>
+	</tr>
+	</tbody>
+	</table>
+</div>
+
+
+
+<hr>
+
+
+
+<xmp>
+<!-- type 3 -->
+</xmp>
+
+<style>
+ul.type3 {overflow-x:auto; white-space:nowrap; width:500px;}
+ul.type3 li {display:inline-block; width:100px; padding:20px 0; border:solid 1px silver; margin:0 5px; box-sizing:border-box; vertical-align:top;}
+ul.type3 li a {display:block; text-align:center; white-space:normal;}
+</style>
+<ul class="type3">
+	<li><a href="#self">1</a></li>
+	<li><a href="#self">2</a></li>
+	<li><a href="#self">3</a></li>
+	<li><a href="#self">4</a></li>
+	<li><a href="#self">5</a></li>
+	<li><a href="#self">6</a></li>
+	<li><a href="#self">7</a></li>
+	<li><a href="#self">8</a></li>
+	<li><a href="#self">9</a></li>
+</ul>
+
+</body>
+</html>

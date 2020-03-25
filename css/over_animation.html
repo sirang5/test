@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../common.css">
+</head>
+<body>
+
+<xmp>
+<!-- over시 layer slide animation -->
+.box {position:relative; width:500px; height:100px; padding:20px; border:solid 1px silver; margin:20px 0;}
+.box .layer {position:absolute; top:100%; right:0; bottom:0; left:0; background:rgba(0,0,0,0.7); transition:top 0.1s;}
+.box:hover .layer {top:0; padding:20px;}
+</xmp>
+
+<style>
+.box {position:relative; width:500px; height:100px; padding:20px; border:solid 1px silver; margin:20px 0;}
+.box .layer {position:absolute; top:100%; right:0; bottom:0; left:0; background:rgba(0,0,0,0.7); transition:top 0.1s;}
+.box .lt1 {color:#FFF;}
+.box:hover .layer {top:0; padding:20px;}
+</style>
+<div class="box">
+	<p class="t1">서울대 경영학부</p>
+	<div class="layer">
+		<p class="lt1">합격할 수 있었던 요인은?</p>
+	</div>
+</div>
+
+</body>
+</html>

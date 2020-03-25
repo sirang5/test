@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../common.css">
+</head>
+<body>
+
+<xmp>
+// 정의하기
+$viewport: 640;
+@function calc-vw($vw) { // ex) width: 10px
+	$vw-context: ($viewport * 0.01) * 1px;
+	@return ($vw / $vw-context) * 1vw;
+}
+@mixin calc-vw-2($vw, $vw1, $type) { // ex) padding: 10px 5px
+	$vw-context: ($viewport * 0.01) * 1px;
+	$a:($vw / $vw-context) * 1vw;
+	$b:($vw1 / $vw-context) * 1vw;
+	@if $type == padding {
+		padding: #{$a} #{$b};
+	} @else if $type == margin {
+		margin: #{$a} #{$b};
+	} @else if $type == auto {
+		margin: #{$a} auto #{$b};
+	}
+}
+@mixin calc-vw-4($vw, $vw1, $vw2, $vw3, $type) { // ex) padding: 5px 3px 2px 1px;
+	$vw-context: ($viewport * 0.01) * 1px;
+	$a:($vw / $vw-context) * 1vw;
+	$b:($vw1 / $vw-context) * 1vw;
+	$c:($vw2 / $vw-context) * 1vw;
+	$d:($vw3 / $vw-context) * 1vw;
+	@if $type == padding {
+		padding: #{$a} #{$b} #{$c} #{$d};
+	} @else if $type == margin {
+		margin: #{$a} #{$b} #{$c} #{$d};
+	} @else if $type == radius {
+		border-radius: #{$a} #{$b} #{$c} #{$d};
+	}
+}
+@mixin calc-calc($vw, $type){ // ex) calc 계산
+	$vw-context: ($viewport * 0.01) * 1px;
+	$a:($vw / $vw-context) * 1vw;
+	@if $type == width {
+		width:calc(100% - #{$a});
+	} @else if $type == width2 {
+		width:calc(100%/2 - #{$a});
+	} @else if $type == calc2 {
+		height:calc(100%/2 - #{$a});
+	}
+}
+	
+// 사용하기
+.event_wrap {
+	width: 100%;
+	max-width: 640px;   
+	margin: 0 auto;
+	img {
+		width: 100%;
+	}
+	.logo {
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		padding: 20px 0px;
+		margin:10px 20px 30px 20px;
+		z-index: 10;
+		width: 123px;
+		max-width:calc(100% - 100px);
+		@media screen and (max-width:640px){
+			top: calc-vw(10px);
+			left: calc-vw(10px);
+			@include calc-vw-2(20px, 0px, padding);
+			@include calc-vw-4(10px, 20px, 30px, 20px, margin);
+			@include calc-calc(100px, width);
+			width: calc-vw(123px);
+		}
+	}
+}
+</xmp>
+
+</body>
+</html>

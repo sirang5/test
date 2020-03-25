@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../common.css">
+</head>
+<body>
+
+<xmp>
+<!-- X표 안나오게 -->
+.input1[type=text]::-ms-clear {display: none; width:0; height:0;} /* Remove IE default X */
+.input1[type=text]::-webkit-search-cancel-button {display:none;}  /* Remove webkit default X */
+</xmp>
+
+<style>
+.input1[type=text]::-ms-clear {display: none; width:0; height:0;}
+.input1[type=text]::-webkit-search-cancel-button {display:none;}
+</style>
+
+<div>
+	<input type="text" class="input1" placeholder="X표 안나오게">
+</div>
+
+
+<hr>
+
+
+
+
+<xmp>
+<!-- placehoder color 변경 ( , 사용하면 안됨 / Edge에서 font size 변경은 안됨, 버그임) -->
+.input2::placeholder {color:red;} /* Chrome, Firefox, Opera, Safari 10.1+ */
+.input2:-ms-input-placeholder {color:red;} /* Internet Explorer 10-11 */
+.input2::-ms-input-placeholder {color:red;} /* Microsoft Edge */
+</xmp>
+
+<style>
+.input2::placeholder {color:red;}
+.input2:-ms-input-placeholder {color:red;}
+.input2::-ms-input-placeholder {color:red;}
+</style>
+
+<div>
+	<input type="text" class="input2" placeholder="placehoder color 변경">
+</div>
+
+
+
+
+<hr>
+
+
+
+<xmp>
+<!-- ios input disabled style 변경 (웹에서와 달리 너무 흐리게 나올 때) -->
+[이슈] input:disabled 경우 아이폰에서 스타일이 다르게 나옴
+[해결] input:disabled 일 때, opacity: 1 과 -webkit-text-fill-color: inherit 을 지정해준다.
+</xmp>
+
+
+</body>
+</html>

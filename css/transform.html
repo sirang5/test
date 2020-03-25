@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../common.css">
+</head>
+<body>
+
+<xmp>
+<!-- over시 회전 -->
+.vbtn18:after {
+	content:""; display:inline-block; width:9px; height:9px; vertical-align:middle; margin:0 0 0 5px; background:url(arr_down2.gif) no-repeat center center; 
+	transform:rotate(0deg); transition:All 0.3s ease;
+}
+.vbtn18:hover:after {transform:rotate(180deg);}
+</xmp>
+
+<style>
+.vbtn18 {display:inline-block; border:solid 1px silver; padding:5px;}
+.vbtn18:after {content:""; display:inline-block; width:9px; height:9px; vertical-align:middle; margin:0 0 0 5px; background:url(http://image.jinhak.com/renewal2009/virtualapply/arr_down2.gif) no-repeat center center; transform:rotate(0deg); transition:All 0.3s ease;}
+	.vbtn18:hover:after {transform:rotate(180deg);}
+</style>
+
+<p>
+	<a href="#self" class="vbtn18">over시 회전</a>
+</p>
+
+</body>
+</html>

@@ -10,94 +10,158 @@
 
 <xmp>
 <!-- select 1 -->
+.select1 {
+	height:25px; padding-left:6px; padding-right:30px; border:solid 1px #c9c9c9; border-radius:2px; 
+	background:url(select_arr.gif) no-repeat right center,-webkit-gradient(linear,0 0,0 100%,from(white),to(whiteSmoke)); -webkit-appearance:none; 
+	font-size:13px; color:#000;
+}
+.select1::-ms-expand {display:none;}
+</xmp>	
+
 <style type="text/css">
-.select {height:25px; padding-left:6px; border:solid 1px #c9c9c9; border-radius:2px; background:url(http://image.jinhak.com/renewal2013/mjinhak/select_arr.gif) no-repeat right center,-webkit-gradient(linear,0 0,0 100%,from(white),to(whiteSmoke)); -webkit-appearance:none; font-size:13px!important; color:#000; vertical-align:middle;}
+.select1 {height:25px; padding-left:6px; padding-right:30px; border:solid 1px #c9c9c9; border-radius:2px; background:url(http://image.jinhak.com/renewal2013/mjinhak/select_arr.gif) no-repeat right center,-webkit-gradient(linear,0 0,0 100%,from(white),to(whiteSmoke)); -webkit-appearance:none; font-size:13px!important; color:#000; vertical-align:middle;}
+.select1::-ms-expand {display:none;}
 </style>
 
-
-<!-- select 2 -->
-<style type="text/css">
-.select_box {position:relative; float:left; height:40px; border-left:solid 1px #d4d4d4; box-sizing:border-box; background:url(arr2_down.gif) right center no-repeat; background-size:25px auto;}
-	.select_box label {position:absolute; top:13px; left:10px;}
-	.select_box select {width:100%; height:40px; min-height:40px; line-height:40px; padding-left:10px; opacity:0; filter:alpha(opacity=0);}
-</style>
-
-<script type="text/javascript">
-$(document).ready(function(){
-	var select = $(".select_box select");
-	select.change(function(){
-		var select_name = $(this).children("option:selected").text();
-		$(this).siblings("label").text(select_name);
-	});
-});
-</script>
-
-<div class="select_box" style="width:50%;">
-	<label for="src1">업종</label>
-	<select id="src1">
-		<option>업종</option>
+<div>
+	<select name="" id="" class="select1">
+		<option value="">선택</option>
 	</select>
 </div>
 
 
-<!-- select 3 -->
-<style type="text/css">
-.select1 {display:inline-block; border:solid 2px #545e69; height:42px; box-sizing:border-box; overflow:hidden; vertical-align:middle;}
-	.select1 select {padding:0 5px 0 10px; height:40px; margin:-1px -1px -1px -1px;}
+
+<hr>
+
+
+
+<xmp>
+<!-- select 2 -->
+.select2 {display:inline-block; border:solid 2px #545e69; height:42px; box-sizing:border-box; overflow:hidden; vertical-align:middle;}
+	.select2 select {padding:0 5px 0 10px; height:40px; margin:-1px -1px -1px -1px;}
 	td .select1 select {width:calc(100% + 2px);}
 	@media \0screen {
-		.select1 {border:0; height:auto;}
-		.select1 select {height:auto; margin:0; padding:9px 5px 10px 10px;}
-		td .select1 select {width:100%;}
+		.select2 {border:0; height:auto;}
+		.select2 select {height:auto; margin:0; padding:9px 5px 10px 10px;}
+		td .select2 select {width:100%;}
+	}
+</xmp>
+
+<style>
+.select2 {display:inline-block; border:solid 2px #545e69; height:42px; box-sizing:border-box; overflow:hidden; vertical-align:middle;}
+	.select2 select {padding:0 5px 0 10px; height:40px; margin:-1px -1px -1px -1px;}
+	@media \0screen {
+		.select2 {border:0; height:auto;}
+		.select2 select {height:auto; margin:0; padding:9px 5px 10px 10px;}
+		td .select2 select {width:100%;}
 	}
 </style>
 
-<span class="select1">
-	<select name="" id="" title="직무군 구분" style="width:200px;"> <!-- width : inline -->
-		<option value="">직무군 선택1</option>
-		<option value="">직무군 선택2</option>
-		<option value="">직무군 선택3</option>
-	</select>
-</span>
-
-<td>
-	<span class="select1">
-		<select name="" id="" title="학교 구분"> <!-- width : 공통 -->
-			<option value="">학교</option>
+<div>
+	<span class="select2">
+		<select name="" id="" title="직무군 구분" style="width:200px"> <!-- width : inline -->
+			<option value="">직무군 선택1</option>
+			<option value="">직무군 선택2</option>
+			<option value="">직무군 선택3</option>
 		</select>
 	</span>
-</td>
+</div>
 
 
-<!-- select 4 (디자인 입히기, best 임) -->
-<style>
-.select4 {padding:5px 35px 7px 7px; font-size:13px; color:#7d7d7d; border:solid 1px #ccc; background:url(http://image.jinhak.com/renewal2009/virtualapply/ico_select6.gif) no-repeat right center; -webkit-appearance:none;}
-	.select4::-ms-expand {display:none;}
-	@media screen and (min-width:0\0) and (min-resolution:.001dpcm) { /* IE9 */
-		.select4 {background:none; padding-right:4px;}
-	}
-	@media \0screen { /* IE8 */
-		.select4 {background:none; padding-right:4px;}
-	}
-</style>
+
+<hr>
 
 
-<!-- radio style (IE8에서는 기본 radio가 보이게 하도록 해야함 - IE8 :checked 지원안함)-->
-<style type="text/css">
-.ico_ck1 {position:relative; display:inline-block; width:116px; cursor:pointer;}
-	.ico_ck1 label {display:block; height:31px; line-height:28px; text-align:center; border:solid 1px #ddd; background-color:#FFF; border-radius:20px; font-size:12px; color:#545e69; cursor:pointer;}
-	.ico_ck1 input {display:block; position:absolute; top:0; left:0; width:100%; height:100%; opacity:0;}
+
+<xmp>
+<!-- ico_ck 1 -->
+.ico_ck1 {position:relative; display:inline-block; width:100px;}
+	.ico_ck1 label {display:block; height:31px; line-height:28px; text-align:center; border:solid 1px #ddd; background-color:#FFF; font-size:12px; color:#545e69; cursor:pointer;}
+	.ico_ck1 input {position:absolute; top:0; right:0; bottom:0; left:0; opacity:0; cursor:pointer;}
 	.ico_ck1 input:checked + label {position:relative; border-color:#545e69; background-color:#545e69; color:#FFF; z-index:2;}
 	@media \0screen {
 		.ico_ck1 input {width:auto; height:auto; left:1px; top:8px; opacity:1; filter:alpha(opacity=100);}
 	}
+</xmp>
+
+<style>
+.ico_ck1 {position:relative; display:inline-block; width:100px;}
+	.ico_ck1 label {display:block; height:31px; line-height:28px; text-align:center; border:solid 1px #ddd; background-color:#FFF; font-size:12px; color:#545e69; cursor:pointer;}
+	.ico_ck1 input {position:absolute; top:0; right:0; bottom:0; left:0; opacity:0; cursor:pointer;}
+	.ico_ck1 input:checked + label {position:relative; border-color:#545e69; background-color:#545e69; color:#FFF; z-index:2;}
+	@media \0screen {
+		.ico_ck1 input {width:auto; height:auto; left:1px; top:8px; opacity:1; filter:alpha(opacity=100);}
+	}	
 </style>
 
 <div class="radios">
-	<span class="ico_ck1"><input type="radio" name="gender" id="gender_m" /><label for="gender_m">남</label></span>
-	<span class="ico_ck1"><input type="radio" name="gender" id="gender_f" /><label for="gender_f">여</label></span>
+	<span class="ico_ck1"><input type="radio" name="gender" id="gender_m" checked><label for="gender_m">남</label></span>
+	<span class="ico_ck1"><input type="radio" name="gender" id="gender_f"><label for="gender_f">여</label></span>
 </div>
 
+
+
+<hr>
+
+
+
+<xmp>
+<!-- ico_ck 2 -->
+.ico_ck2 {position:relative; display:inline-block;}
+.ico_ck2 + .ico_ck2 {margin-left: 30px;}
+.ico_ck2 label {position:relative; display:block; padding-left:25px; font-size:inherit; color:inherit; cursor:pointer;}
+.ico_ck2 label:after {content:""; display:block; position:absolute; top:0; left:0; width:21px; height:21px; background:url("ico_ck2.png") no-repeat left top;}
+.ico_ck2 input {position:absolute; top:0; left:0; opacity:0; filter:alpha(opacity=0); cursor:pointer;}
+.ico_ck2 input:checked + label:after {background-image:url("ico_ck2_on.png");}
+</xmp>
+
+<style>
+.ico_ck2 {position:relative; display:inline-block;}
+.ico_ck2 + .ico_ck2 {margin-left: 30px;}
+.ico_ck2 label {position:relative; display:block; padding-left:25px; font-size:inherit; color:inherit; cursor:pointer;}
+.ico_ck2 label:after {content:""; display:block; position:absolute; top:0; left:0; width:21px; height:21px; background:url("https://imgorg.catch.co.kr/job/corp/ico_ck2.png") no-repeat left top;}
+.ico_ck2 input {position:absolute; top:0; left:0; opacity:0; filter:alpha(opacity=0); cursor:pointer;}
+.ico_ck2 input:checked + label:after {background-image:url("https://imgorg.catch.co.kr/job/corp/ico_ck2_on.png");}
+</style>
+
+<div>
+	<span class="ico_ck2"><input type="radio" name="agree" id="agree1" checked><label for="agree1">동의</label></span>
+	<span class="ico_ck2"><input type="radio" name="agree" id="agree2"><label for="agree2">비동의</label></span>
+</div>
+
+
+
+<hr>
+
+
+
+<xmp>
+<!-- ico_ck 3 -->
+.ico_ck3 {position:relative; display:inline-block; width:20px; height:20px;}
+.ico_ck3 + .ico_ck3 {margin-left: 30px;}
+.ico_ck3 input {position:absolute; top:0; right:0; bottom:0; left:0; opacity:0; cursor:pointer;}
+.ico_ck3 label {display:block; height:100%; text-indent:-9999em; background:url("ico_star03.png") no-repeat center center; cursor:pointer;}
+.ico_ck3 input:checked + label {background-image:url("ico_star03_on.png");}
+</xmp>
+
+<style>
+.ico_ck3 {position:relative; display:inline-block; width:20px; height:20px;}
+.ico_ck3 + .ico_ck3 {margin-left: 30px;}
+.ico_ck3 input {position:absolute; top:0; right:0; bottom:0; left:0; opacity:0; cursor:pointer;}
+.ico_ck3 label {display:block; height:100%; text-indent:-9999em; background:url("https://imgorg.catch.co.kr/job/site/ico_star03.png") no-repeat center center; cursor:pointer;}
+.ico_ck3 input:checked + label {background-image:url("https://imgorg.catch.co.kr/job/site/ico_star03_on.png");}
+</style>
+
+<div>
+	<span class="ico_ck3"><input type="checkbox" name="" id="ckFav1" checked><label for="ckFav1">관심 1</label></span>
+	<span class="ico_ck3"><input type="checkbox" name="" id="ckFav2"><label for="ckFav2">관심 2</label></span>
+</div>
+
+<hr>
+
+
+
+<xmp>
 </xmp>
 
 </body>

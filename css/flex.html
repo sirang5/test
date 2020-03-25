@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../common.css">
+</head>
+<body>
+
+<xmp>
+flex형태 정의			display: flex;
+컨텐츠의 가로정렬		justify-content: flex-start|flex-end|center|space-between|space-around
+컨텐츠의 세로정렬		align-items: stretch|center|flex-start|flex-end|baseline
+컨텐이너 안 컨텐츠정렬	flex-direction: row|row-reverse|column|column-reverse
+</xmp>
+
+
+
+<hr>
+
+
+
+<xmp>
+<!-- width:150px, li 3개 -->
+.flex1 {display:flex; justify-content:center; background:#EEE;}
+.flex1 li {display:flex; justify-content:center; align-items:center; text-align:center; width:150px; margin:0 5px; border:solid 2px yellowgreen; box-sizing:border-box;}
+</xmp>
+
+<style>
+	.flex1 {display:flex; justify-content:center; background:#EEE;}
+	.flex1 li {display:flex; justify-content:center; align-items:center; text-align:center; width:150px; margin:0 5px; border:solid 2px yellowgreen; box-sizing:border-box;}
+</style>
+
+<ul class="flex1">
+	<li>1</li>
+	<li>2 <br>2</li>
+	<li>3</li>
+</ul>
+
+
+
+<hr>
+
+
+
+<xmp>
+<!-- 두개 균등, 가로가운데, 세로가운데 -->
+.btn_box {display:flex; width:300px;}	
+.btn_box .btn {display:flex; display:flex; flex:1; justify-content:center; align-items:center; font-size:14px; color:#FFF; height:60px;}
+.btn_box .btn.back {background-color:#999;}
+.btn_box .btn.next {background-color:#272727;}
+</xmp>
+
+<style>
+.btn_box {display:flex; width:300px;}	
+.btn_box .btn {display:flex; display:flex; flex:1; justify-content:center; align-items:center; font-size:14px; color:#FFF; height:60px;}
+.btn_box .btn.back {background-color:#999;}
+.btn_box .btn.next {background-color:#272727;}
+</style>
+
+<div class="btn_box">
+	<p class="btn back">back</p>
+	<p class="btn next">next</p>
+</div>
+
+
+
+<hr>
+
+
+
+<xmp>
+<!-- 왼쪽으로 몰아넣기 + 오른쪽에 width 고정된것 넣기 -->
+.add {display:flex; width:500px;}
+.add li {display:flex; flex:1; border:solid 1px silver; justify-content:center; margin-right:2%;}
+.add li.btn {flex:none; width:60px; margin-right:0;}
+</xmp>
+
+<style>
+.add {display:flex; width:500px;}
+.add li {display:flex; flex:1; border:solid 1px silver; justify-content:center; margin-right:2%;}
+.add li.btn {flex:none; width:60px; margin-right:0;}
+</style>
+
+<ul class="add">
+	<li>1</li>
+	<li>2</li>
+	<li>3</li>
+	<li class="btn">btn</li>
+</ul>
+
+<hr>
+
+
+
+<xmp>
+<!-- txt 박스안에 p태그 가로가운데, 세로가운데 정렬 -->
+.txt {display:flex; width:300px; height:100px; border:solid 2px silver; flex-direction:column; justify-content:center; text-align:center;}
+</xmp>
+
+<style>
+.txt {display:flex; width:300px; height:100px; border:solid 2px silver; flex-direction:column; justify-content:center; text-align:center;}
+</style>
+<p class="txt">
+	text text text <br>text 
+</p>
+
+</body>
+</html>

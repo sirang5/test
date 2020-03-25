@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../common.css">
+</head>
+<body>
+
+<xmp>
+/* scss code */
+a {
+	$type: ( // bgImg, color
+		ico1: (url('ico_type21_1.png'), #076284),
+		ico2: (url('ico_type21_2.png'), #f45757)
+	);
+	@each $name, $value in $type {
+		$imgUrl: nth($value, 1);
+		$color: nth($value, 2);
+		&.#{$name} {
+			&{
+				background-image: $imgUrl;
+			}
+			span {
+				color: $color;
+			}
+		}
+	}
+}
+	
+/* css 컴파일 결과 */
+a.ico1 {background-image:이미지;}
+a.ico1 span {color:칼라}
+a.ico2 {background-image:이미지;}
+a.ico2 span {color:칼라}
+</xmp>
+
+
+
+<hr>
+
+
+
+<xmp>
+/* scss code */
+$espresso: (
+    'americano': #391919,
+    'latte': #aa9f7d,
+    'cappuccino': #887e61,
+    'macchiato': #d0b76a,
+    'mocha': #804c2a,
+);
+
+@each $name, $color in $espresso {
+    .coffee_#{$name} {
+        background-color: $color;
+    }
+}
+
+/* css 컴파일 결과 */
+.coffee_americano {background-color:#391919}
+.coffee_latte {background-color:#aa9f7d}
+.coffee_cappuccino {background-color:#887e61}
+.coffee_macchiato {background-color:#d0b76a}
+.coffee_mocha {background-color:#804c2a}
+</xmp>
+
+</body>
+</html>

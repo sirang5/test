@@ -8,21 +8,48 @@
 </head>
 <body>
 
-<xmp>
-.tooltip1 {position:relative;}
-.tooltip1:hover:after {
-	content:attr(data-tooltip); display:block; position:absolute; top:-1px; left:0; z-index:1; 
-	background-color:#a5abb5; max-width:240px; height:20px; line-height:17px; font-size:11px; color:#FFF; border-radius:10px; padding:0 8px; 
-	overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
-}
-</xmp>
-
+<h2>content:attr(data-tooltip)</h2>
 <style>
-.tooltip1 {position:relative;}
-	.tooltip1:hover:after {content:attr(data-tooltip); display:block; position:absolute; top:-1px; left:0; z-index:1; background-color:#a5abb5; max-width:240px; height:20px; line-height:17px; font-size:11px; color:#FFF; border-radius:10px; padding:0 8px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
+.tooltip1 {position:relative; display:inline-block; cursor:pointer; border:solid 1px silver; padding:0 5px;}
+.tooltip1:hover:after {content:attr(data-tooltip); display:block; position:absolute; background-color:#a5abb5; font-size:11px; color:#FFF; padding:5px;}
 </style>
 
 <span class="tooltip1" data-tooltip="일이삼사오육칠팔구십">일이삼사오...</span>
+
+
+
+<hr>
+
+
+
+<h2>display:none/block</h2>
+<style>
+.tooltip2 {position:relative; display:inline-block; cursor:pointer; border:solid 1px silver; padding:0 5px;}
+.tooltip2 .help {display:none; position:absolute; background-color:pink; font-size:11px; color:#FFF; padding:5px;}
+.tooltip2:hover .help {display:block;}
+</style>
+
+<p><span class="tooltip2">Hover me! <span class="help">Show class name "help"</span></span></p>
+
+
+
+<hr>
+
+
+
+<h2>accessibility</h2>
+<style>
+.tooltip3 {position:relative; margin-bottom:30px;}
+.tooltip3 dt {display:inline-block; cursor:pointer; border:solid 1px silver; padding:0 5px;}
+.tooltip3 dt:hover + dd {display:block;} 
+.tooltip3 dd {display:none; position:absolute; background-color:yellowgreen; font-size:11px; color:#FFF; padding:5px;}
+.tooltip3 dd:hover {display:block;}
+</style>
+
+<dl class="tooltip3">
+	<dt>Hover me!</dt>
+	<dd>Show class name "help"<dd>
+</dl>
 
 </body>
 </html>

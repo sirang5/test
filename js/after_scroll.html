@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../common.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<style>
+.topFix { background:gold; padding:20px; height:50px;}
+.topFix.top {display:block; position:fixed; top:10px; left:10px;}
+.box {height:400px; background:silver;}
+</style>
+<script>
+	$(function(){ 
+		var menupos = $(".topFix").offset().top;
+		$(window).scroll(function(){
+			if($(window).scrollTop() >= menupos) {
+				$(".topFix").addClass('top');
+			} else {
+				$(".topFix").removeClass('top');
+			}
+		});
+	});
+</script>
+
+<div class="box">
+	<p class="topFix">topFix</p>
+</div>
+
+</body>
+</html>

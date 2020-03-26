@@ -8,25 +8,61 @@
 </head>
 <body>
 
-<xmp>
-<!-- over시 layer slide animation -->
-.box {position:relative; width:500px; height:100px; padding:20px; border:solid 1px silver; margin:20px 0;}
-.box .layer {position:absolute; top:100%; right:0; bottom:0; left:0; background:rgba(0,0,0,0.7); transition:top 0.1s;}
-.box:hover .layer {top:0; padding:20px;}
-</xmp>
 
+<h2>over시 회전</h2>
 <style>
-.box {position:relative; width:500px; height:100px; padding:20px; border:solid 1px silver; margin:20px 0;}
-.box .layer {position:absolute; top:100%; right:0; bottom:0; left:0; background:rgba(0,0,0,0.7); transition:top 0.1s;}
-.box .lt1 {color:#FFF;}
-.box:hover .layer {top:0; padding:20px;}
+.vbtn18 {display:inline-block; border:solid 1px silver; padding:5px 10px;}
+.vbtn18:after {content:""; display:inline-block; width:9px; height:9px; vertical-align:middle; margin:0 0 0 5px; background:url(http://image.jinhak.com/renewal2009/virtualapply/arr_down2.gif) no-repeat center center; transform:rotate(0deg); transition:All 0.1s;}
+	.vbtn18:hover:after {transform:rotate(180deg);}
 </style>
-<div class="box">
-	<p class="t1">서울대 경영학부</p>
+
+<p>
+	<a href="#self" class="vbtn18">over시 회전</a>
+</p>
+
+
+
+
+<hr>
+
+
+
+
+<h2>over시 layer slide animation</h2>
+<style>
+.box_wrap {position:relative; overflow:hidden; color:#FFF;}
+.box_wrap .box {background-color:silver; padding:10px;}
+.box_wrap .layer {position:absolute; top:100%; right:0; bottom:0; left:0; background:rgba(0,0,0,0.7); transition:All 0.1s;}
+.box_wrap .layer p {padding:10px;}
+.box_wrap:hover .layer {top:0;}
+</style>
+
+<div class="box_wrap">
+	<p class="box">
+		Hello I am content. All that matters for this method to work is that the item wrapper has a fixed size. In my working project, the width is set to a % value, and the height to rem.
+	</p>
 	<div class="layer">
-		<p class="lt1">합격할 수 있었던 요인은?</p>
+		<p>A title for my content</p>
 	</div>
 </div>
+
+
+
+<hr>
+
+
+
+
+<h2>over시 높이 변화</h2>
+<style>
+.box_ht_trans {background:silver; padding:10px; box-sizing:border-box; height:29px; overflow:hidden; color:#FFF; transition:height 0.2s; margin-bottom:50px;}
+.box_ht_trans:hover {height:auto;}
+</style>
+<p class="box_ht_trans">Hello I am content. All that matters for this method to work is that the item wrapper has a fixed size.</p>
+
+
+
+
 
 </body>
 </html>

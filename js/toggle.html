@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../common.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<style>
+.toggle1 li {margin-top:5px;}
+.toggle1 .t1 button {padding:2px 5px;}
+.toggle1 .t1 button.selected {font-weight:bold; color:red;}
+.toggle1 .t2 {display:none; border:solid 1px silver; padding:5px; margin-top:5px;}
+
+.toggle2 {margin-top:10px; border-top:solid 1px gray; padding-top:5px;}
+.toggle2 li {margin-top:5px;}
+.toggle2 .t1 button {padding:2px 5px;}
+.toggle2 .t1 button.selected {font-weight:bold; color:blue;}
+.toggle2 .t2 {display:none; border:solid 1px silver; padding:5px; margin-top:5px;}
+
+.toggle3 {margin-top:10px; border-top:solid 1px gray; padding-top:10px;}
+.toggle3 .t1 button {padding:2px 5px;}
+.toggle3 .t2 {display:none; border:solid 1px silver; padding:5px; margin-top:5px;}
+</style>
+
+<script>
+$(function(){ // toggle1
+	$(".toggle1 .t1 button").click(function(){
+		$(this).parent().next("p").toggle(150);
+		$(this).toggleClass("selected");
+	});
+});
+
+$(function(){ // toggle2
+	$('.toggle2 button').click(function(){
+		if ($(this).hasClass('selected')) {
+
+		} else {
+		$('.toggle2 .t2').slideUp(150);
+		$('.toggle2 .t1 button').removeClass('selected');
+		$(this).parent().next('.t2').slideDown(150);
+		$(this).addClass('selected');
+		}
+	});
+});
+
+$(function () { // toggle3
+	$('.toggle3 button').click(function(){
+		$('.toggle3 .t2').slideToggle(150);
+		$(this).find('span').text( $(this).find('span').text() == '닫기' ? "보기" : "닫기");
+	});
+});
+</script>
+
+<div class="toggle1">
+	<ul>
+		<li>
+			<p class="t1"><button type="button">toggle1 - 1</button></p>
+			<p class="t2">1. Hello I am content.</p>
+		</li>
+		<li>
+			<p class="t1"><button type="button">toggle1 - 2</button></p>
+			<p class="t2">2. Hello I am content.</p>
+		</li>
+	</ul>
+</div>
+	
+<div class="toggle2">
+	<ul>
+		<li>
+			<p class="t1"><button type="button">toggle2 - 1</button></p>
+			<p class="t2">1. Hello I am content.</p>
+		</li>
+		<li>
+			<p class="t1"><button type="button">toggle2 - 2</button></p>
+			<p class="t2">2. Hello I am content.</p>
+		</li>
+	</ul>
+</div>
+	
+<div class="toggle3">
+	<p class="t1"><button type="button">숨긴내용 <span>보기</span></button></p>
+	<p class="t2">Hello I am content.</p>
+</div> 
+
+</body>
+</html>

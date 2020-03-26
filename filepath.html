@@ -8,46 +8,22 @@
 <title>Publishing tip</title>
 <style type="text/css">
 	@import url("https://fonts.googleapis.com/earlyaccess/notosanskr.css");
-	body {background:#FFF; margin:0; padding:10px; color:#333; font-family:'Noto Sans KR',sans-serif; line-height:1.4;}
-	h1, h2, p {margin:0; padding:0;}
+	body {background:#FFF; margin:0; padding:10px; color:#333; font-family:Lucida Sans Unicode, SimHei, Arial, sans-serif;}
+	h1, h2, h3, ul, li, p {margin:0; padding:0; box-sizing:border-box;}
 	a {text-decoration:none; color:inherit;}
 	#wrap {width:100%; max-width:1200px; margin:0 auto;}
-	h1 {font-size:24px; text-align:center; margin-top:20px;}
-	h2 {font-size:12px; color:yellow; font-weight:normal; margin-top:30px; padding:5px; background:linear-gradient(to right, #da1b60, #ff8a00);}
-	.tip_list .list {font-size:12px; zoom:1; border-bottom:dashed 1px #D8D8D8; padding:7px 0;}
-	.tip_list .list:after {content:""; display:table; clear:both; table-layout:fixed;}
-	.tip_list .list span {display:inline-block; width:40px; text-align:center;}
-	.tip_list .list button {border:0; padding:0; margin:0; background:transparent; cursor:pointer;}
-	.tip_list .iframe_wrap {position:relative;}
-	.tip_list .iframe_wrap iframe {position:absolute; top:-9999em; left:-9999em;}
-	.tip_list .iframe_wrap iframe.show {position:relative; top:auto; left:0; border-bottom:solid 2px #D8D8D8;}
+	h1 {font-size:24px; text-align:center; margin:20px 0 30px 0;}
+	h2 {font-size:12px; color:yellow; font-weight:normal; margin-top:100px; padding:7px; background:linear-gradient(to right, #da1b60, #ff8a00);}
+	h1 + h2 {margin-top:0;}
+	h3 {font-size:12px; color:#FFF; font-weight:normal; margin-bottom:10px; padding:7px; background-color:#4CAF50;}
+	.list {overflow:hidden;}
+	.list:after {content:""; display:block; clear:both;}
+	.list li {padding:10px; border:solid 2px #ddd; list-style-type:none;}
+	.list.at1 li {margin:0.5% 0;}
+	.list.at2 li {float:left; width:49%; margin:0.5%;}
+	.list.at3 li {float:left; width:33%; margin:0.16%;}
+	.list .iframe_wrap iframe {position:relative; width:100%; height:200px; border:0;}
 </style>
-<script type="text/javascript">
-	var no = 0; // list 노출
-	var u = 0;
-	function list(title, url) {
-		no = no + 1;
-		document.write("<div class=tip_list>");
-		document.write("<p class=list><span>"+no+"</span><button>"+title+"</button></p>");
-		document.write("<div class=iframe_wrap><iframe id='iframeList' allowtransparency='true' onload='resizeFrame(this)' src="+url+" width='100%' height='100%' frameborder='0' scrolling='no'></iframe></div>");
-		document.write("</div>");
-	}
-
-	$(function(){ // list toggle
-		$(".tip_list button").click(function(){
-			$("#wrap iframe").removeClass("show");
-			$(this).parent().next().find("iframe").addClass("show");
-		});
-	});
-
-	function resizeFrame(iframeObj) { // iframe resize
-		var innerBody = iframeObj.contentWindow.document.documentElement;
-		oldEvent = innerBody.onclick;
-		innerBody.onclick = function () { resizeFrame(iframeObj, 1); oldEvent; };
-		var innerHeight = innerBody.scrollHeight;
-		iframeObj.style.height = innerHeight + "px";
-	}
-</script>
 </head>
 <body>
 
@@ -55,59 +31,159 @@
 	<h1>Work tip</h1>
 
 	<h2>HTML</h2>
-	<script>
-		list('a / input submit / button 구분','html/a_input_button.html');
-		list('input, textarea 텍스트 미리넣기','html/placeholder.html');
-		list('excel 파일 데이터를 HTML 로 변환','html/excel.html');
-		list('파일첨부를 이미지로','html/btn_file.html');
-		list('iframe 속성','html/iframe_properties.html');
-		list('동영상 대표 이미지사용','html/vod.html');
-		list('textarea 대용','html/textarea.html');
-		list('graph sample','html/graph.html');
-		list('반응형','html/mediaquery.html');
-	</script>
-
+	<ul class="list at3">
+		<li>
+			<h3>a / input submit / button 구분</h3>
+			<div class="iframe_wrap"><iframe src="html/a_input_button.html"></iframe></div>
+		</li>
+		<li>
+			<h3>input, textarea 텍스트 미리넣기</h3>
+			<div class="iframe_wrap"><iframe src="html/placeholder.html"></iframe></div>
+		</li>
+		<li>
+			<h3>select optgroup</h3>
+			<div class="iframe_wrap"><iframe src="html/select.html"></iframe></div>
+		</li>
+		<li>
+			<h3>excel 파일 데이터를 HTML로 변환</h3>
+			<div class="iframe_wrap"><iframe src="html/excel.html"></iframe></div>
+		</li>
+		<li>
+			<h3>iframe 속성</h3>
+			<div class="iframe_wrap"><iframe src="html/iframe_properties.html"></iframe></div>
+		</li>
+		<li>
+			<h3>동영상 대표 이미지사용</h3>
+			<div class="iframe_wrap"><iframe src="html/vod.html"></iframe></div>
+		</li>
+		<li>
+			<h3>graph sample</h3>
+			<div class="iframe_wrap"><iframe src="html/graph.html"></iframe></div>
+		</li>
+		<li>
+			<h3>반응형</h3>
+			<div class="iframe_wrap"><iframe src="html/mediaquery.html"></iframe></div>
+		</li>
+	</ul>
+	
 	<h2>CSS</h2>
-	<script>
-		list('mobile 작업시','css/mobile.html');
-		list('webfont','css/webfont.html');
-		list('반응형','css/mediaquery.html');
-		list('이미지, 텍스트 세로 중앙정렬','css/align_middle.html');
-		list('scrollbar','css/scrollbar.html');
-		list('scroll x (js 없이)','css/scroll_x.html');
-		list('말줄임','css/ellipsis.html');
-		list('form degisn','css/form.html');
-		list('css 핵','css/hack.html');
-		list('들여쓰기','css/indent.html');
-		list('gradation','css/gradation.html');
-		list('float li 가운데 정렬','css/float_center.html');
-		list('li 안쪽에만 선 나오게','css/li_line.html');
-		list('A4용지에 맞게 출력하기','css/a4.html');
-		list('tooltip','css/tooltip.html');
-		list('input style (X표 안나오게, placehoder color변경, ios disabled)','css/input_style.html');
-		list('over시 회전','css/transform.html');
-		list('over시 layer slide animation','css/over_animation.html');
-		list('flex','css/flex.html');
-		list('youtube vod iframe','css/vod.html');
-		
-	</script>
+	<ul class="list at1">
+		<li>
+			<h3>webfont</h3>
+			<div class="iframe_wrap"><iframe src="css/webfont.html"></iframe></div>
+		</li>
+		<li>
+			<h3>scrollbar</h3>
+			<div class="iframe_wrap"><iframe src="css/scrollbar.html"></iframe></div>
+		</li>
+	</ul>
+	<ul class="list at2">
+		<li>
+			<h3>flex</h3>
+			<div class="iframe_wrap"><iframe src="css/flex.html"></iframe></div>
+		</li>
+		<li>
+			<h3>css 핵</h3>
+			<div class="iframe_wrap"><iframe src="css/hack.html"></iframe></div>
+		</li>
+	</ul>
+	<ul class="list at3">
+		<li>
+			<h3>mobile 작업시</h3>
+			<div class="iframe_wrap"><iframe src="css/mobile.html"></iframe></div>
+		</li>
+		<li>
+			<h3>반응형</h3>
+			<div class="iframe_wrap"><iframe src="css/mediaquery.html"></iframe></div>
+		</li>
+		<li>
+			<h3>이미지, 텍스트 세로 중앙정렬</h3>
+			<div class="iframe_wrap"><iframe src="css/align_middle.html"></iframe></div>
+		</li>
+		<li>
+			<h3>scroll x (js 없이)</h3>
+			<div class="iframe_wrap"><iframe src="css/scroll_x.html"></iframe></div>
+		</li>
+		<li>
+			<h3>form degisn</h3>
+			<div class="iframe_wrap"><iframe src="css/form.html"></iframe></div>
+		</li>
+		<li>
+			<h3>input style (X표 안나오게, placehoder color변경, ios disabled)</h3>
+			<div class="iframe_wrap"><iframe src="css/input_style.html"></iframe></div>
+		</li>
+		<li>
+			<h3>들여쓰기</h3>
+			<div class="iframe_wrap"><iframe src="css/indent.html"></iframe></div>
+		</li>
+		<li>
+			<h3>말줄임</h3>
+			<div class="iframe_wrap"><iframe src="css/ellipsis.html"></iframe></div>
+		</li>
+		<li>
+			<h3>gradation</h3>
+			<div class="iframe_wrap"><iframe src="css/gradation.html"></iframe></div>
+		</li>
+		<li>
+			<h3>float li 가운데 정렬</h3>
+			<div class="iframe_wrap"><iframe src="css/float_center.html"></iframe></div>
+		</li>
+		<li>
+			<h3>li 안쪽에만 선 나오게</h3>
+			<div class="iframe_wrap"><iframe src="css/li_line.html"></iframe></div>
+		</li>
+		<li>
+			<h3>ol custom</h3>
+			<div class="iframe_wrap"><iframe src="css/ol.html"></iframe></div>
+		</li>
+		<li>
+			<h3>tooltip</h3>
+			<div class="iframe_wrap"><iframe src="css/tooltip.html"></iframe></div>
+		</li>
+		<li>
+			<h3>over시 animation</h3>
+			<div class="iframe_wrap"><iframe src="css/over_animation.html"></iframe></div>
+		</li>
+		<li>
+			<h3>youtube vod iframe</h3>
+			<div class="iframe_wrap"><iframe src="css/vod.html"></iframe></div>
+		</li>
+		<li>
+			<h3>A4용지에 맞게 출력하기</h3>
+			<div class="iframe_wrap"><iframe src="css/a4.html"></iframe></div>
+		</li>
+	</ul>
 
 	<h2>Sass</h2>
-	<script>
-		list('media query 자동 계산','scss/mediaquery.html');
-		list('class명만 다른 같은 스타일의 each 사용','scss/each.html');
-	</script>
+	<ul class="list at2">
+		<li>
+			<h3>media query 자동 계산</h3>
+			<div class="iframe_wrap"><iframe src="scss/mediaquery.html"></iframe></div>
+		</li>
+		<li>
+			<h3>class명만 다른 같은 스타일의 each 사용</h3>
+			<div class="iframe_wrap"><iframe src="scss/each.html"></iframe></div>
+		</li>
+	</ul>
 
 	<h2>JS</h2>
-	<script>
-		list('js','js/.html');
-	</script>
+	<ul class="list at3">
+		<li>
+			<h3>일정 스크롤 후 (원하는 영역이 브라우저 상단에 닿았을 때)</h3>
+			<div class="iframe_wrap"><iframe src="js/after_scroll.html"></iframe></div>
+		</li>
+		<li>
+			<h3>JQuery tab</h3>
+			<div class="iframe_wrap"><iframe src="js/jqtab.html"></iframe></div>
+		</li>
+		<li>
+			<h3>Toggle</h3>
+			<div class="iframe_wrap"><iframe src="js/toggle.html"></iframe></div>
+		</li>
+	</ul>
+
 
 	<h2>ETC</h2>
-	<script>
-		list('[photoshop]','etc/.html');
-		list('[vue]','etc/.html');
-	</script>
 
 </div>
 

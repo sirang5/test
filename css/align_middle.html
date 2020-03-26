@@ -8,8 +8,9 @@
 </head>
 <body>
 
+<h2>1. 높이가 정해져 있을때는 안됨</h2>
 <style type="text/css">
-	.box p {width:500px; padding:5px; border:1px solid blue;} /* 높이가 정해져 있을때는 안됨 */
+	.box p {padding:5px; border:1px solid blue;}
 	.box p .eximg {display:inline-block; vertical-align:middle; margin-right:10px;}
 	.box p span.text {display:inline-block; vertical-align:middle; width:300px; background-color:lightgreen;}
 </style>
@@ -20,41 +21,20 @@
 	</p>
 </div>
 
-<xmp>
-<!-- 이미지 + 여러줄 text 중앙정렬 -->
-<style type="text/css">
-	.box p {width:500px; padding:5px; border:1px solid blue;} /* 높이가 정해져 있을때는 안됨 */
-	.box p .eximg {display:inline-block; vertical-align:middle; margin-right:10px;}
-	.box p span.text {display:inline-block; vertical-align:middle; width:300px; background-color:lightgreen;}
-</style>
-<div class="box">
-	<p>
-		<img src="http://image.jinhak.com/renewal2009/virtualapply/btn/b03_view_off.gif" class="eximg" alt="박스" />
-		<span class="text">세로 가운데 정렬 세로 가운데 정렬 세로 가운데 정렬 세로 가운데 정렬 세로 가운데 정렬 세로 가운데 정렬 세로 가운데 정렬 세로 가운데 정렬 세로 가운데 정렬 </span>
-	</p>
-</div>
-</xmp>
+
 
 <hr>
 
+
+
+<h2>2. 한 줄</h2>
 <style type="text/css">
-	.aaa {width:300px; height: 104px; border:solid 1px red; margin:10px 0; text-align:center;}
-	.aaa:before {content: ""; display: inline-block; height: 100%; vertical-align: middle;}
+	.aaa {width:300px; height:104px; border:solid 1px red; margin:10px 0; text-align:center;}
+	.aaa:before {content: ""; display: inline-block; height:100%; vertical-align: middle;}
 	.aaa img {vertical-align: middle;}
 </style>
 <p class="aaa"><img src="https://imgorg.catch.co.kr/job/site/header_logo05.png" alt="" /></p>
 <p class="aaa">수시 원서접수자 점수공개</p>
-
-<xmp>
-<!-- 이미지,text 한줄 중앙정렬(IE7 X) - 이젠 BEST -->
-<style type="text/css">
-	.aaa {width:300px; height: 104px; border:solid 1px red; margin:10px 0; text-align:center;}
-	.aaa:before {content: ""; display: inline-block; height: 100%; vertical-align: middle;}
-	.aaa img {vertical-align: middle;}
-</style>
-<p class="aaa"><img src="http://image.jinhak.com/renewal2009/virtualapply/after_top01.png" alt="" /></p>
-<p class="aaa">수시 원서접수자 점수공개</p>
-</xmp>
 
 </body>
 </html>

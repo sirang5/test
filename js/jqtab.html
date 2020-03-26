@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="../common.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+
+<style>
+.tabs {overflow:hidden;}
+.tabs:after {content:""; clear:both; display:block;}
+.tabs li {float:left; margin-left:5px;}
+.tabs li:first-child {margin-left:0;}
+.tabs li a {display:block; height:30px; line-height:30px; padding:0 10px; text-decoration:none; background-color:silver; border:solid 1px silver; border-bottom-width:0;}
+.tabs .selected a {color:#000; background-color:#fff;}
+.tab_cont {display:none; padding:20px; border: 1px solid #d4d4d1; background-color:#FFF; margin-top:-1px;}
+</style>
+
+<script>
+$(function(){
+	$(".tabs li a").click(function(event) {
+		event.preventDefault();
+		$(this).parent().addClass("selected");
+		$(this).parent().siblings().removeClass("selected");
+		var tab = $(this).attr("href");
+		$(".tab_cont").not(tab).css("display", "none");
+		$(tab).show();
+	});
+	$(".tabs li:first-child").addClass("selected");
+	$(".tabs + .tab_cont").css("display", "block");
+});
+</script>
+
+<ul class="tabs">
+	<li><a href="#tabView_1">Tab 1</a></li>
+	<li><a href="#tabView_2">Tab 2</a></li>
+	<li><a href="#tabView_3">Tab 3</a></li>
+</ul>
+<div id="tabView_1" class="tab_cont">
+	<p>Content 1</p>
+</div>
+<div id="tabView_2" class="tab_cont">
+	<p>Content 2</p>
+</div>
+<div id="tabView_3" class="tab_cont">
+	<p>Content 3</p>
+</div>
+
+</body>
+</html>

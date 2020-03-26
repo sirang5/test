@@ -8,20 +8,17 @@
 </head>
 <body>
 
-<xmp>
-<!-- X표 안나오게 -->
-.input1[type=text]::-ms-clear {display: none; width:0; height:0;} /* Remove IE default X */
-.input1[type=text]::-webkit-search-cancel-button {display:none;}  /* Remove webkit default X */
+<xmp><!-- X표 안나오게 -->
+.input1[type=text]::-ms-clear { // IE
+	display: none; 
+	width: 0; 
+	height: 0;
+} 
+.input1[type=text]::-webkit-search-cancel-button {  // webkit
+	display: none;
+}
 </xmp>
 
-<style>
-.input1[type=text]::-ms-clear {display: none; width:0; height:0;}
-.input1[type=text]::-webkit-search-cancel-button {display:none;}
-</style>
-
-<div>
-	<input type="text" class="input1" placeholder="X표 안나오게">
-</div>
 
 
 <hr>
@@ -29,22 +26,19 @@
 
 
 
-<xmp>
-<!-- placehoder color 변경 ( , 사용하면 안됨 / Edge에서 font size 변경은 안됨, 버그임) -->
-.input2::placeholder {color:red;} /* Chrome, Firefox, Opera, Safari 10.1+ */
-.input2:-ms-input-placeholder {color:red;} /* Internet Explorer 10-11 */
-.input2::-ms-input-placeholder {color:red;} /* Microsoft Edge */
+<xmp><!-- placehoder color 변경 -->
+** , 사용하면 안됨 **
+** Edge에서 font size 변경은 안됨, 버그임 **
+.input2::placeholder { // Chrome, Firefox, Opera, Safari 10.1+
+	color: red;
+}
+.input2:-ms-input-placeholder { // Internet Explorer 10-11
+	color:red;
+}
+.input2::-ms-input-placeholder { // Microsoft Edge
+	color:red;
+}
 </xmp>
-
-<style>
-.input2::placeholder {color:red;}
-.input2:-ms-input-placeholder {color:red;}
-.input2::-ms-input-placeholder {color:red;}
-</style>
-
-<div>
-	<input type="text" class="input2" placeholder="placehoder color 변경">
-</div>
 
 
 
@@ -53,10 +47,12 @@
 
 
 
-<xmp>
-<!-- ios input disabled style 변경 (웹에서와 달리 너무 흐리게 나올 때) -->
+<xmp><!-- ios input disabled style 변경 -->
+** 웹에서와 달리 너무 흐리게 나올 때 **
 [이슈] input:disabled 경우 아이폰에서 스타일이 다르게 나옴
-[해결] input:disabled 일 때, opacity: 1 과 -webkit-text-fill-color: inherit 을 지정해준다.
+[해결] input:disabled 일 때, 
+	opacity: 1;
+	-webkit-text-fill-color: inherit;
 </xmp>
 
 

@@ -8,22 +8,15 @@
 </head>
 <body>
 
-	<style>
-		div {margin-bottom:10px;}
-	</style>
+<style>
+	div {margin-bottom:10px;}
+</style>
 
-	<div><input type="text" value="미리넣기" onfocus="this.value='';" /></div>
-	<div><input type="text" class="base" value="원점수입력" onfocus="if(this.value=='댓글을 입력 해 주세요.')this.value=''; this.className=''" /></div>
-	<div><input type="text" name="id" value="" id="id" class="id" onfocus="this.style.background='none';" /></div>
-	<div><textarea name="" id="" cols="30" rows="4" onfocus="if(this.value=='댓글을 입력 해 주세요.')this.value='';">댓글을 입력 해 주세요.</textarea></div> <!-- 내용이 한줄 일 때 -->
-	<div><textarea name="" id="" cols="30" rows="4">안녕하세요. &#13;&#10;이곳에 글을 넣어주세요.</textarea></div> <!-- 내용이 두줄 일 때 -->
+<div><input type="text" value="미리넣기" onfocus="this.value=''"></div>
+<div><input type="text" value="" style="background:gold" onfocus="this.style.background='none'"></div>
+<div><textarea name="" id="" cols="30" rows="3" onfocus="if(this.value=='댓글을 입력 해 주세요.')this.value='';">댓글을 입력 해 주세요.</textarea></div> <!-- 내용이 한줄 일 때 -->
+<div><textarea name="" id="" cols="30" rows="3">안녕하세요. &#13;&#10;이곳에 글을 넣어주세요.</textarea></div> <!-- 내용이 두줄 일 때 -->
 
-<xmp><input type="text" value="미리넣기" onfocus="this.value='';" />
-<input type="text" class="base" value="원점수입력" onfocus="if(this.value=='댓글을 입력 해 주세요.')this.value=''; this.className=''" />
-<input type="text" name="id" value="" id="id" class="id" onfocus="this.style.background='none';" />
-<textarea name="" id="" cols="30" rows="10" onfocus="if(this.value=='댓글을 입력 해 주세요.')this.value='';">댓글을 입력 해 주세요.</textarea> <!-- 내용이 한줄 일 때 -->
-<textarea name="" id="" cols="30" rows="10">안녕하세요. &#13;&#10;이곳에 글을 넣어주세요.</textarea> <!-- 내용이 두줄 일 때 (&#13;&#10;는 다음줄로+처음칸으로) -->
-</xmp>
 
 </body>
 </html>
